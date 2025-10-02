@@ -1,0 +1,36 @@
+/* Keep your existing image-wrapper and rotating-bg styles */
+.image-wrapper {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.rotating-bg {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 210px; /* Slightly larger than image */
+    height: 210px;
+    border-radius: 50%;
+    background: conic-gradient(#ff6ec4, #7873f5, #ff6ec4);
+    z-index: 1;
+    animation: rotate360 5s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* NEW: only activate rotating-bg when its own .card-hover parent is hovered */
+.card-hover:hover .rotating-bg {
+    opacity: 1;
+}
+
+@keyframes rotate360 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

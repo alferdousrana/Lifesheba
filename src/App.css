@@ -1,0 +1,103 @@
+
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+.navbar-nav .nav-item:hover {
+  transform: scale(1.1);
+  z-index: 5;
+} 
+
+.input-group input {
+  border-radius: 0.25rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  margin-right: -1px; /* tighten spacing */
+  background-color: #f8f9fa;
+  border-color: #FDD4FA;
+  
+}
+.input-group textarea {
+  border-radius: 0.25rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  margin-right: -1px; /* tighten spacing */
+  background-color: #f8f9fa;
+  border-color: #FDD4FA;
+}
+.input-group .input-group-text {
+  border-radius: 0.25rem;
+  background-color: #eef9fa; /* optional, for consistent look */
+  border-right: none;
+  border-color: #FDD4FA; /* optional, if border double line issue */
+}
+
+.input-group input {
+  border-left: none; /* optional, merge border look with icon */
+}
+.input-group textarea {
+  border-left: none; /* optional, merge border look with icon */
+}
+
+.form-select{
+  background-color: #eef9fa;
+  border-color: #FDD4FA;
+  border-radius: 0.25rem;
+}
+
+
+.company-overview-box {
+  position: relative;
+  padding: 20px 20px; /* more padding */
+  border-radius: 15px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  width: 60%;              /* reduce width of box */
+  margin: 0 auto;          /* center the box */
+}
+
+/* animated gradient border */
+.company-overview-box::before {
+  content: "";
+  position: absolute;
+  top: 6px; left: 6px; right: 6px; bottom: 6px; /* increase thickness */
+  border-radius: 15px;
+  padding: 5px; /* thicker border */
+  background: linear-gradient(270deg, #d22fff, #eb4a9b, #d53be9, #0f4c75);
+  background-size: 600% 600%;
+  animation: borderMove 6s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  z-index: 0;
+}
+
+/* heading with GOOD TIMES font */
+.about-heading {
+  font-family: 'Good Times';
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #d22fff, #eb4a9b, #d53be9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGlow 2s infinite alternate;
+  position: relative;
+  z-index: 1;
+}
+
+/* border animation */
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Contact form-এর Message textarea কে target  */
+textarea[name="message"] {
+  min-height: 90px !important;  
+  resize: vertical;             
+}
