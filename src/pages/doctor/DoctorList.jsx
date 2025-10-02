@@ -36,7 +36,7 @@ function DoctorList() {
         const fetchDoctors = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(`${baseUrl}/doctors`);
+                const response = await axios.get(`${baseUrl}/doctors/`);
                 let fetchedDoctors = response.data.results;
 
                 // Build unique specializations
@@ -121,7 +121,7 @@ function DoctorList() {
                 {doctors.length > 0 ? (
                     doctors.map((doctor, index) => (
                         <div className="col-md-6 mb-4" key={index}
-                            onClick={() => navigate(`/doctors/${doctor.slug}`)}
+                            onClick={() => navigate(`/doctors/${doctor.slug}/`)}
                             style={{ cursor: 'pointer', }}>
                             <div className="d-flex align-items-center shadow p-3 m-2 rounded card-hover" style={{ minHeight: '220px', background: '#f7eff3ff' }}>
                                 <div className="image-wrapper position-relative">
@@ -129,7 +129,7 @@ function DoctorList() {
                                     <img
                                         src={
                                             doctor.profile?.profile_picture
-                                                ? `${baseUrl.replace("/api", "")}/${doctor.profile.profile_picture}`
+                                                ? `${baseUrl.replace("/api", "")}/${doctor.profile.profile_picture}/`
                                                 : 'https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png'
                                         }
                                         alt="Doctor"
@@ -162,7 +162,7 @@ function DoctorList() {
                                             className="btn btn-sm btn-outline-primary"
                                             onClick={(e) => {
                                                 e.stopPropagation(); // 👈 prevent parent click
-                                                navigate(`/doctors/${doctor.slug}`);
+                                                navigate(`/doctors/${doctor.slug}/`);
                                             }}
                                         >
                                             Details
