@@ -129,7 +129,7 @@ function DoctorList() {
                                     <img
                                         src={
                                             doctor.profile?.profile_picture
-                                                ? `${baseUrl.replace("/api", "")}/${doctor.profile.profile_picture}/`
+                                                ? `${baseUrl.replace("/api", "")}/${doctor.profile.profile_picture}`
                                                 : 'https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png'
                                         }
                                         alt="Doctor"
